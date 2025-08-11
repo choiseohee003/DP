@@ -1,69 +1,56 @@
-# React + TypeScript + Vite
+# DP - React + TypeScript + Vite + Tailwind + Supabase
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+이 프로젝트는 다음 기술 스택으로 구성되어 있습니다:
 
-Currently, two official plugins are available:
+## 🛠️ 기술 스택
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **React 18** - UI 라이브러리
+- **TypeScript** - 타입 안전성
+- **Vite** - 빠른 개발 서버 및 빌드 도구
+- **Tailwind CSS** - 유틸리티 우선 CSS 프레임워크
+- **Supabase** - 백엔드 서비스 (인증, 데이터베이스)
 
-## Expanding the ESLint configuration
+## 🚀 시작하기
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### 설치
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 환경 변수 설정
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+`.env.local` 파일을 생성하고 Supabase 정보를 입력하세요:
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```env
+VITE_SUPABASE_URL=your_supabase_url
+VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
 ```
+
+### 개발 서버 실행
+
+```bash
+npm run dev
+```
+
+## 📁 프로젝트 구조
+
+```
+src/
+├── api/
+│   └── supabaseClient.ts    # Supabase 클라이언트 설정
+├── hooks/
+│   └── useAuth.ts           # 인증 관련 커스텀 훅
+├── lib/
+│   └── supabase.ts          # Supabase 설정 (대안)
+├── App.tsx                  # 메인 앱 컴포넌트
+└── main.tsx                 # 앱 진입점
+```
+
+## ✨ 주요 기능
+
+- 🔐 Supabase 이메일/비밀번호 인증
+- 📱 반응형 UI (Tailwind CSS)
+- ⚡ 빠른 개발 환경 (Vite HMR)
+- 🔒 타입 안전성 (TypeScript)
+- 🎨 모던 UI 컴포넌트
