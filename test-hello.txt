@@ -1,0 +1,5 @@
+HELLO - 다중 저장소 푸시 테스트!
+
+이 파일이 두 저장소 모두에 나타나면 성공입니다:
+1. https://github.com/choiseohee003/DP
+2. https://github.com/choiseohee003/DP_backup
