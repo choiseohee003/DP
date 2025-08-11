@@ -1,5 +1,7 @@
 # DP - React + TypeScript + Vite + Tailwind + Supabase
 
+**HELLO** - 다중 저장소 푸시 테스트!
+
 이 프로젝트는 다음 기술 스택으로 구성되어 있습니다:
 
 ## 🛠️ 기술 스택
@@ -54,3 +56,7 @@ src/
 - ⚡ 빠른 개발 환경 (Vite HMR)
 - 🔒 타입 안전성 (TypeScript)
 - 🎨 모던 UI 컴포넌트
+
+
+## 🧪 테스트 메시지
+HELLO - 다중 저장소 푸시 테스트 중입니다!
